@@ -37,7 +37,7 @@ SDImageCache主要成员：
 - dispatch_queue_t ioQueue表示io队列
 
 #几个关键点
-- 单例的实现
+- 单例的实现  
 SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例的形式存在，实现上用了类似的方法：  
 ```Objective-C
 	+ (id)sharedManager {
