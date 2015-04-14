@@ -10,7 +10,7 @@ MKAnnotationView
 
 #代码结构
 如图：   
-![alt text]()
+![如图:](https://github.com/klarm/blog/raw/master/res/SDWebImage_proj.png)
 
 主要由下面几个类组成：  
 SDWebImageDownloader
