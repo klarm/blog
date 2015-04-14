@@ -12,8 +12,9 @@ MKAnnotationView
 如图：   
 ![如图:](https://github.com/klarm/blog/raw/master/res/SDWebImage_proj.png)
 
+
 主要由下面几个类组成：  
-SDWebImageDownloader
+- SDWebImageDownloader
 图片下载器
 - SDImageCache
 图片cache（包括disk和memory的cache）
@@ -21,7 +22,7 @@ SDWebImageDownloader
 大内总管，扮演协调downloader和cache之间关系的角色
 
 #主要类的设计
-- SDWebImageManager主要成员：  
+SDWebImageManager主要成员：  
 - SDWebImageDownloader *imageDownloader管理下载  
 - SDImageCache *imageCache管理缓存  
 - id <SDWebImageManagerDelegate> delegate回调通知
