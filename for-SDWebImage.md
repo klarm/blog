@@ -38,6 +38,7 @@ SDImageCache主要成员：
 
 #几个关键点
 - 单例的实现
+```Objective-C
 SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例的形式存在，实现上用了类似的方法：  
 	+ (id)sharedManager {
     	static dispatch_once_t once;
@@ -47,6 +48,7 @@ SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例
     	});
     	return instance;
 	}
+```
 简单来说，就是通过dispatch_once来实现单例。这种方法利用了dispatch_once可以保证block里的代码只执行一次，并且是线程安全的特性。[可以参考这里。](http://blog.csdn.net/ryantang03/article/details/8622415)
 
 - 磁盘cache的实现  
