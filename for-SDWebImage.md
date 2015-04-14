@@ -55,7 +55,7 @@ SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例
 这里使用了UIImagePNGRepresentation和UIImageJPEGRepresentation读取图片的data，保存在NSData中，然后通过createFileAtPath保存在磁盘中。
 
 ##相关链接  
-[这里有一个](https://github.com/enormego/EGOImageLoading)  
+[EGOImageLoading](https://github.com/enormego/EGOImageLoading)  
 实现的思路大同小异，不同的是EGOImageLoading不是通过类别扩展标准控件，而是通过直接派生自UIButton、UIImageView实现的。
 
 
