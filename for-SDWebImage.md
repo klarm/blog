@@ -1,14 +1,14 @@
-#概述
+##概述
 简单来讲，SDWebImage是一个用来异步加载网络图片的库，在使用者的角度，设置url以及占位图片后，其他的就不用做了，SDWebImage自动开始下载图片，并且在图片下载完成之前在相应的位置显示占位图片。
 
-#实现形式  
+##实现形式  
 通过为预定义控件添加类别方法来实现，具体来说，为以下控件做了扩展：  
 UIImage  
 UIButton  
 UIImageView  
 MKAnnotationView  
 
-#代码结构
+##代码结构
 如图：   
 ![如图:](https://github.com/klarm/blog/raw/master/res/SDWebImage_proj.png)
 
@@ -36,7 +36,7 @@ SDImageCache主要成员：
 - NSString *diskCachePath存放磁盘cache的路径  
 - dispatch_queue_t ioQueue表示io队列
 
-#几个关键点
+##几个关键点
 - 单例的实现  
 SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例的形式存在，实现上用了类似的方法：  
 ```Objective-C
@@ -53,6 +53,12 @@ SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例
 
 - 磁盘cache的实现  
 这里使用了UIImagePNGRepresentation和UIImageJPEGRepresentation读取图片的data，保存在NSData中，然后通过createFileAtPath保存在磁盘中。
+
+##相关链接  
+[这里有一个](https://github.com/enormego/EGOImageLoading)  
+实现的思路大同小异，不同的是EGOImageLoading不是通过类别扩展标准控件，而是通过直接派生自UIButton、UIImageView实现的。
+
+
 
 
 
