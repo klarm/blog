@@ -38,8 +38,8 @@ SDImageCache主要成员：
 
 #几个关键点
 - 单例的实现
-```Objective-C
 SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例的形式存在，实现上用了类似的方法：  
+```Objective-C
 	+ (id)sharedManager {
     	static dispatch_once_t once;
     	static id instance;
