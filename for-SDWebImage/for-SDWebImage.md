@@ -1,26 +1,17 @@
 ##概述
-简单来讲，SDWebImage是一个用来异步加载网络图片的库，在使用者的角度，设置url以及占位图片后，其他的就不用做了，SDWebImage自动开始下载图片，并且在图片下载完成之前在相应的位置显示占位图片。
-
+简单来讲，SDWebImage是一个用来异步加载网络图片的库，在使用者的角度，设置图片的url以及占位图片后，其他的就不用做了，SDWebImage会自动开始下载图片，在图片下载完成前相应的位置显示占位图片，在图片下载完成之后将占位图片替换为实际的图片。  
 ##实现形式  
-通过为预定义控件添加类别方法来实现，具体来说，为以下控件做了扩展：  
-UIImage  
-UIButton  
-UIImageView  
-MKAnnotationView  
+通过为系统预定义的控件添加类别的方式来实现，具体来说，为以下控件做了扩展：  
+* UIImage  
+* UIButton  
+* UIImageView  
+* MKAnnotationView  
 
 ##代码结构
-如图：   
-![如图:](https://github.com/klarm/blog/raw/master/res/SDWebImage_proj.png)
-
-
 主要由下面几个类组成：  
-- SDWebImageDownloader
-图片下载器
-- SDImageCache
-图片cache（包括disk和memory的cache）
-- SDWebImageManager
-大内总管，扮演协调downloader和cache之间关系的角色
-
+* SDWebImageDownloader 图片下载器
+* SDImageCache 实现缓存的地方
+* SDWebImageManager 大内总管，扮演协调downloader和cache之间关系的角色  
 #主要类的设计
 SDWebImageManager主要成员：  
 - SDWebImageDownloader *imageDownloader管理下载  
@@ -39,7 +30,7 @@ SDImageCache主要成员：
 ##几个关键点
 - 单例的实现  
 SDWebImage中SDWebImageManager、SDWebImageManager和SDImageCache都是以单例的形式存在，实现上用了类似的方法：  
-```Objective-C
+```objc
 	+ (id)sharedManager {
     	static dispatch_once_t once;
     	static id instance;
