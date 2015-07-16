@@ -1,9 +1,9 @@
 ##概述
 列表视图的下拉刷新是个很常见的功能，github上有很多开源的解决方案，EGOTableViewPullRefresh是其中使用很多的一个，下面来分析它的实现。
 ##UI组成
-整体效果图如下图所示： 
+整体效果图如下图所示：  
 ![整体效果图]
-(https://github.com/klarm/blog/blob/master/for-PullRefresh/%E6%95%B4%E4%BD%93%E7%A4%BA%E6%84%8F%E5%9B%BE.png)  
+(https://github.com/klarm/blog/blob/master/for-PullRefresh/%E6%95%B4%E4%BD%93%E7%A4%BA%E6%84%8F%E5%9B%BE.png)    
 可以分为两个部分，列表视图部分和刷新指示视图部分。  
 从UI结构上讲，没什么特别的，就是普通的subView关系：  
 ```objc
