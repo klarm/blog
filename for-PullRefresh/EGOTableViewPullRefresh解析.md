@@ -22,9 +22,9 @@ label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0
 
 layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
 ```
-发现刷新指示视图中，真正的内容部分，即显示提示文字和上次更新时间的lable、显示箭头的layer在刷新指示视图的下方，如下图所示：
+发现刷新指示视图中，真正的内容部分，即显示提示文字和上次更新时间的lable、显示箭头的layer在刷新指示视图的下方，如下图所示：  
 ![整体示意图]
-(https://github.com/klarm/blog/blob/master/for-PullRefresh/EGOTableViewPullRefresh%E8%A7%A3%E6%9E%90.png)   
+(https://github.com/klarm/blog/blob/master/for-PullRefresh/EGOTableViewPullRefresh%E8%A7%A3%E6%9E%90.png)  
 那下拉的过程中，可视区域外的刷新指示视图是怎么显示出来的呢，加一条log：NSLog(@"scrollView.contentOffset.y=%f", scrollView.contentOffset.y);  
 发现在列表下拉的过程中，刚好拉倒列表顶部的时候，scrollView.contentOffset.y为0，继续往下拉，scrollView.contentOffset.y变为负值，相对于scroolView的frame在y轴方向上为负的子视图就显示出来了。
 
